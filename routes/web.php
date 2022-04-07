@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('hello/{m}{s}',function($m, $s) {
+
 $html = <<<EOF
 <html>
 <head>
@@ -25,21 +34,12 @@ h1 {font-size:100pt; text-align:right; color:#eee;
 </head>
 <body>
     <h1>Hello</h1>
-    <p>This is sample page.</p>
+    <p>{$m}</p><br>
+    <p>{$s}</p>
     <p>これは、サンプルで作ったページです。</p>
 </body>
 </html>
 EOF;
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('hello',function() use ($html) {
     return $html;
 });
-
-// Route::get('hello',function() {
-//     return '<html><body><h1>Hello</h1><p>This is sample page.</p></body></html>';
-// });
