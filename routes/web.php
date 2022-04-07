@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 // Route::get('hello/{m}/{s}/{g}',function($m, $s,$g) {
-Route::get('hello/{msg?}',function($msg='no message.') {
+Route::get('hello/{m?}/{s?}/{g?}',function($m='no message.', $s='no 2.', $g='no 3.') {
 
 $html = <<<EOF
 <html>
@@ -35,7 +35,9 @@ h1 {font-size:100pt; text-align:right; color:#eee;
 </head>
 <body>
     <h1>Hello</h1>
-    <p>{$msg}</p>
+    <p>{$m}</p>
+    <p>{$s}</p>
+    <p>{$g}</p>
     <p>これは、サンプルで作ったページです。</p>
 </body>
 </html>
