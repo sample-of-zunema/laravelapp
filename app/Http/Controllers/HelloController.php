@@ -4,22 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HlloController extends Controller
+class HelloController extends Controller
 {
-    public function index() {
+    public function index($id='noname', $pass='unknown') {
         return <<<EOF
         <html>
             <head>
                 <title>Hello/index</title>
                 <style>
-                body { font-size:16pt; color:#999; }
-                h1 { font-size:1000pt; text-align:right; color:#eee;
-                    margin:-40px 0px -50px 0px; }
+
                 </style>
             </head>
             <body>
                 <h1>Index</h1>
                 <p>これは、Helloコントローラのindexアクションです </p>
+                <ul>
+                    <li>ID: {$id}</li>
+                    <li>ID: {$pass}</li>
+                </ul>
             </body>
         </html>
         EOF;
