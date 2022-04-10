@@ -14,6 +14,10 @@
   </head>
   <body>
     <h1>Index</h1>
-    <p>This is a sample page with php-template.</p>
+    <p><?php echo $msg; ?></p>
+    <p><?php echo date("Y年n月j日"); ?></p>
+    <p><?php echo $int; ?></p>
+    <?php var_dump($value); ?>
+    <p><?php echo $value; ?></p>
   </body>
 </html>

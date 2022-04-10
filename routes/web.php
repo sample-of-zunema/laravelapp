@@ -31,4 +31,7 @@ Route::get('/', function () {
 // Route::get('/hello', 'App\Http\Controllers\HelloController@index');
 
 // 3-2.ルートの設定でテンプレートを表示
+// Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+
+// 3-3.コントローラでテンプレートを使う
 Route::get('/hello', 'App\Http\Controllers\HelloController@index');
