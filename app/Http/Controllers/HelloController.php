@@ -7,12 +7,23 @@ use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 
 class HelloController extends Controller
 {
-    public function index()
+    // 3-8.ルートパラメータをテンプレートに渡す
+    public function index($id='zero')
     {
-        $data = ['msg'=>'これはコントローラから渡されたメッセージです。', 'int'=> 123];
-        $val = ['value'=> '練習'];
-        return view('hello.index', $data, $val);
+        $data = [
+            'msg' => 'これはコントローラから渡されたメッセージです。',
+            'id' => $id
+        ];
+        return view('hello.index', $data);
     }
+
+    // // 3-5.値をテンプレートに渡す
+    // public function index()
+    // {
+    //     $data = ['msg'=>'これはコントローラから渡されたメッセージです。', 'int'=> 123];
+    //     $val = ['value'=> '練習'];
+    //     return view('hello.index', $data, $val);
+    // }
 
     // // 2-15.RequestおよびResponse
     // public function index(Request $request, Response $response) {

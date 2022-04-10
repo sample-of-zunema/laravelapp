@@ -13,11 +13,14 @@
     </style>
   </head>
   <body>
+    <!-- 3-5.値をテンプレートに渡す -->
     <h1>Index</h1>
     <p><?php echo $msg; ?></p>
     <p><?php echo date("Y年n月j日"); ?></p>
     <p><?php echo $int; ?></p>
     <?php var_dump($value); ?>
     <p><?php echo $value; ?></p>
+    <!-- 3-7.ルートパラメータをテンプレートに渡す -->
+    <p>ID=<?php echo $id; ?></p>
   </body>
 </html>
