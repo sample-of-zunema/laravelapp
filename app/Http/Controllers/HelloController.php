@@ -9,14 +9,14 @@ class HelloController extends Controller
 {
     // 2-15.RequestおよびResponse
     public function index(Request $request, Response $response) {
-        $html <<<EOF
+        $html = <<<EOF
         <html>
             <head>
                 <title>Hello/Index</title>
                 <style>
                     body { font-size:16pt; color:#999; }
                     h1 { font-size:120pt; text-align:right; color:#fafafa;
-                        margin:-50px 0px 120px 0px; }
+                        margin:-50px 0px -120px 0px; }
                 </style>
             </head>
             <body>

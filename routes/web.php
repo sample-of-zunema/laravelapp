@@ -25,4 +25,7 @@ Route::get('/', function () {
 // Route::get('/hello/other', 'App\Http\Controllers\HelloController@other');
 
 // 2-14.シングルアクション
-Route::get('/hello', 'App\Http\Controllers\HelloController');
+// Route::get('/hello', 'App\Http\Controllers\HelloController');
+
+// 2-15.RequestおよびResponse
+Route::get('/hello', 'App\Http\Controllers\HelloController@index');
