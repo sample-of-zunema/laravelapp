@@ -22,24 +22,43 @@ function tag($tag, $txt) {
 
 class HelloController extends Controller
 {
-    // 2-10複数アクションの利用
-    public function index() {
-       global $head, $style, $body, $end;
-
-       $html = $head . tag('title', 'Hello/Index') . $style . $body
-            . tag('h1','Index') . tag('p', 'this is Index page')
-            . '<a href="/hello/other">go to Other page</a>'
-            . $end;
-        return $html;
+    // 2-13.HelloControllerをシングルアクション化
+    public function __inboke() {
+        return <<<EOF
+        <html>
+            <head>
+                <title>Hello</title>
+                <style>
+                    body { font-size:16pt; color:#999; }
+                    h1 { font-size:30pt; text-align:right; color:#eee;
+                        margin:-15px 0px 0px 0px; }
+                </style>
+            </head>
+            <body>
+                <h1>Single Action</h1>
+                <p>これは、シングルアクションコントローラのアクションです。</p>
+            </body>
+        </html>
+        EOF;
     }
+    // // 2-10複数アクションの利用
+    // public function index() {
+    //    global $head, $style, $body, $end;
 
-    public function other() {
-        global $head, $style, $body, $end;
+    //    $html = $head . tag('title', 'Hello/Index') . $style . $body
+    //         . tag('h1','Index') . tag('p', 'this is Index page')
+    //         . '<a href="/hello/other">go to Other page</a>'
+    //         . $end;
+    //     return $html;
+    // }
 
-        $html = $head . tag('title', 'Hello/Other') . $style . $body
-            . tag('h1','Other') . tag('p', 'this is Other page')
-            . '<a href="/hello/other">go to Other page</a>'
-            . $end;
-        return $html;
-    }
+    // public function other() {
+    //     global $head, $style, $body, $end;
+
+    //     $html = $head . tag('title', 'Hello/Other') . $style . $body
+    //         . tag('h1','Other') . tag('p', 'this is Other page')
+    //         . '<a href="/hello/other">go to Other page</a>'
+    //         . $end;
+    //     return $html;
+    // }
 }
