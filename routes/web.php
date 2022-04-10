@@ -20,5 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', 'App\Http\Controllers\HelloController@index');
-Route::get('/hello/other', 'App\Http\Controllers\HelloController@other');
+// // 2-12.複数アクションの利用
+// Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+// Route::get('/hello/other', 'App\Http\Controllers\HelloController@other');
+
+// 2-14.シングルアクション
+Route::get('/hello', 'App\Http\Controllers\HelloController');
