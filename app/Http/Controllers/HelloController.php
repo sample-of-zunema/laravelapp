@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// 2-10複数アクションの利用
 global $head, $style, $body, $end;
 $head = '<html><head>';
 $style = <<<EOF
@@ -21,6 +22,7 @@ function tag($tag, $txt) {
 
 class HelloController extends Controller
 {
+    // 2-10複数アクションの利用
     public function index() {
        global $head, $style, $body, $end;
 
