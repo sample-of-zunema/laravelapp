@@ -14,9 +14,13 @@
     </style>
   </head>
   <body>
-    <!-- 3-14.テンプレートを使う -->
+    <!-- 3-17.@ifを利用する -->
     <h1>Blade/Index</h1>
-    <p>{{ $msg }}</p>
+    @if ($msg != '')
+      <p>こんにちは、{{ $msg }}さん。</p>
+    @else
+      <p>何か書いてください。</p>
+    @endif
     <form method="POST" action="/hello">
         @csrf
         <input type="text" name="msg">
