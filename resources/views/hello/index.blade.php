@@ -14,8 +14,13 @@
     </style>
   </head>
   <body>
-    <!-- 3-12.テンプレートを使う -->
+    <!-- 3-14.テンプレートを使う -->
     <h1>Blade/Index</h1>
     <p>{{ $msg }}</p>
+    <form method="POST" action="/hello">
+        @csrf
+        <input type="text" name="msg">
+        <input type="submit">
+    </form>
   </body>
 </html>
