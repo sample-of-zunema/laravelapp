@@ -1,4 +1,4 @@
-<!-- 3-12.テンプレートを使う -->
+<!-- 3-12.テンプレートを使う
 <html>
   <head>
     <title>Hello/Index</title>
@@ -28,10 +28,28 @@
       @endwhile
     </ol>
 
-    <!-- <form method="POST" action="/hello">
+    <form method="POST" action="/hello">
         @csrf
         <input type="text" name="msg">
         <input type="submit">
-    </form> -->
+    </form>
   </body>
-</html>
+</html> -->
+
+@xetends('layouts.helloapp')
+
+@section('title', 'Index')
+
+@section('menubar')
+      @parent
+      インデックスページ
+@endsection
+
+@section('content')
+      <p>ここが本文のコンテンツです。</p>
+      <p>必要なだけ記述できます。</p>
+@endsection
+
+@section('footer')
+copyright 2022 iio.
+@endsection
