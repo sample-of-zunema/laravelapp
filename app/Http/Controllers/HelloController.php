@@ -10,8 +10,8 @@ class HelloController extends Controller
     // 3-22.@foreach利用する
     public function index()
     {
-        $data = ['one', 'two', 'three', 'four', 'five']
-        return view('hello.index', ['data' => $data]);
+        $data = ['one', 'two', 'three', 'four', 'five'];
+        return view('hello.index', ['data11' => $data]);
     }
 
     public function post(Request $request)
