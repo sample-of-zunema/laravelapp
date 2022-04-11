@@ -7,10 +7,11 @@ use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 
 class HelloController extends Controller
 {
-    // 3-18.@ifを利用する
+    // 3-22.@foreach利用する
     public function index()
     {
-        return view('hello.index');
+        $data = ['one', 'two', 'three', 'four', 'five']
+        return view('hello.index', ['data' => $data]);
     }
 
     public function post(Request $request)
