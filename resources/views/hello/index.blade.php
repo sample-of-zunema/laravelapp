@@ -11,14 +11,7 @@
       <p>ここが本文のコンテンツです。</p>
       <p>必要なだけ記述できます。</p>
 
-      @component('components.message')
-        @slot('msg_title')
-        CAUTION!
-        @endslot
-
-        @alot('msg_content')
-        これはメッセージの表示です。
-        @endcomponent
+      @include('components.message', ['msg_title' => 'OK', 'msg_content' => 'msg_content' = > 'サブビューです。'])
 @endsection
 
 @section('footer')

@@ -18,6 +18,6 @@
   }
 </style>
 <div class="message">
-  <p ckass="msg_title">{{ $msg_title }}</p>
-  <p ckass="msg_content">{{ $msg_content }}</p>
+  <p class="msg_title">{{ $msg_title1 }}</p>
+  <p class="msg_content">{{ $msg_content }}</p>
 </div>
