@@ -40,6 +40,7 @@
     <h2 class="menutitle">※メニュー</h2>
     <ul>
       <li>@show</li>
+      <li>@show</li>
     </ul>
     <hr size="1">
     <div class="content">
