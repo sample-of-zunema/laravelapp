@@ -14,7 +14,6 @@
     </style>
   </head>
   <body>
-    <!-- 3-17.@ifを利用する -->
     <h1>Blade/Index</h1>
     @if ($msg != '')
       <p>こんにちは、{{ $msg }}さん。</p>
