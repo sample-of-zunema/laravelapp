@@ -7,15 +7,24 @@ use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 
 class HelloController extends Controller
 {
-    // 3-10.クエリー文字列の利用
-    public function index(Request $request)
+    // 3-13.テンプレートを使う
+    public function index()
     {
         $data = [
-            'msg' => 'これはコントローラから渡されたメッセージです。',
-            'id' => $request->id
+            'msg' => 'これはBladeを利用したサンプルです。',
         ];
         return view('hello.index', $data);
     }
+
+    // // 3-10.クエリー文字列の利用
+    // public function index(Request $request)
+    // {
+    //     $data = [
+    //         'msg' => 'これはコントローラから渡されたメッセージです。',
+    //         'id' => $request->id
+    //     ];
+    //     return view('hello.index', $data);
+    // }
 
     // // 3-8.ルートパラメータをテンプレートに渡す
     // public function index($id='zero')
