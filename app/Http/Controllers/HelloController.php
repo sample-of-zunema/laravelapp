@@ -10,7 +10,7 @@ class HelloController extends Controller
     // 3-18.@ifを利用する
     public function index()
     {
-        return view('hello.index', ['msg' => '']);
+        return view('hello.index');
     }
 
     public function post(Request $request)
