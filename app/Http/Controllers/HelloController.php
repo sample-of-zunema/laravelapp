@@ -7,22 +7,15 @@ use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 
 class HelloController extends Controller
 {
-    // 3-15.Bladeのアクションの用意
+    // 3-18.@ifを利用する
     public function index()
     {
-        $data = [
-            'msg' => 'お名前を入力してください。',
-        ];
-        return view('hello.index', $data);
+        return view('hello.index', ['msg' => '']);
     }
 
     public function post(Request $request)
     {
-        $msg = $request->msg;
-        $data = [
-            'msg' => 'こんにちは、' . $msg . 'さん！',
-        ];
-        return view('hello.index', $data);
+        return view('hello.index', ['msg' => $request->msg]);
     }
 
     // // 3-13.テンプレートを使う
