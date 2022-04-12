@@ -7,21 +7,32 @@ use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 
 class HelloController extends Controller
 {
-    // 3-33.@eachによるコレクションビュー
+    // 3-38.ビューコンポーザを利用する
     public function index()
     {
-        $data = [
-            ['name' => '山田たろう', 'mail' => 'taro@yamada'],
-            ['name' => '田中はなこ', 'mail' => 'hanako@flower'],
-            ['name' => '鈴木さちこ', 'mail' => 'sachiko@happy']
-        ];
-        return view('hello.index', ['data' => $data]);
+        return view('hello.index', ['message' => Hello!]);
     }
 
     public function post(Request $request)
     {
         return view('hello.index', ['msg' => $request->msg]);
     }
+
+    // // 3-33.@eachによるコレクションビュー
+    // public function index()
+    // {
+    //     $data = [
+    //         ['name' => '山田たろう', 'mail' => 'taro@yamada'],
+    //         ['name' => '田中はなこ', 'mail' => 'hanako@flower'],
+    //         ['name' => '鈴木さちこ', 'mail' => 'sachiko@happy']
+    //     ];
+    //     return view('hello.index', ['data' => $data]);
+    // }
+
+    // public function post(Request $request)
+    // {
+    //     return view('hello.index', ['msg' => $request->msg]);
+    // }
 
     // // 3-22.@foreach利用する
     // public function index()
