@@ -7,10 +7,14 @@ use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 
 class HelloController extends Controller
 {
-    // 3-22.@foreach利用する
+    // 3-33.@eachによるコレクションビュー
     public function index()
     {
-        $data = ['one', 'two', 'three', 'four', 'five'];
+        $data = [
+            'name' => '山田たろう',
+            'name' => '田中はなこ',
+            'name' => '鈴木さちこ',
+        ];
         return view('hello.index', ['data' => $data]);
     }
 
@@ -18,6 +22,18 @@ class HelloController extends Controller
     {
         return view('hello.index', ['msg' => $request->msg]);
     }
+
+    // // 3-22.@foreach利用する
+    // public function index()
+    // {
+    //     $data = ['one', 'two', 'three', 'four', 'five'];
+    //     return view('hello.index', ['data' => $data]);
+    // }
+
+    // public function post(Request $request)
+    // {
+    //     return view('hello.index', ['msg' => $request->msg]);
+    // }
 
     // // 3-13.テンプレートを使う
     // public function index()
