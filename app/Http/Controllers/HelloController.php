@@ -10,7 +10,7 @@ class HelloController extends Controller
     // 3-38.ビューコンポーザを利用する
     public function index()
     {
-        return view('hello.index', ['message' => Hello!]);
+        return view('hello.index', ['message' => 'Hello!']);
     }
 
     public function post(Request $request)
