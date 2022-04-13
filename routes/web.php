@@ -42,7 +42,7 @@ Route::get('/', function () {
 
 // 3-10.クエリー文字列の利用
 //4-3.ミドルウェアの実行
-Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+Route::get('/hello', 'App\Http\Controllers\HelloController@index')
     ->middleware(HelloMiddleware::class);
 // 3-16.POSTのルート設定
 Route::post('/hello', 'App\Http\Controllers\HelloController@post');
