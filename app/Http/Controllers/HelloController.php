@@ -7,16 +7,33 @@ use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 
 class HelloController extends Controller
 {
-    // 4-8.ビューとコントローラの修正
+    // 4-15.バリデーションを利用する
     public function index(Request $request)
     {
-        return view('hello.index');
+        return view('hello.index', ['msg' => 'フォームを入力：']);
     }
 
     public function post(Request $request)
     {
-        return view('hello.index', ['msg' => $request->msg]);
+        $validate_rule = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0,150',
+        ];
+        $this->validate($request, $validate_rule);
+        return view('hello.index', ['msg' => '正しく入力されました！']);
     }
+
+    // // 4-8.ビューとコントローラの修正
+    // public function index(Request $request)
+    // {
+    //     return view('hello.index');
+    // }
+
+    // public function post(Request $request)
+    // {
+    //     return view('hello.index', ['msg' => $request->msg]);
+    // }
 
     // // 4-4.ビューとコントローラの修正
     // public function index(Request $request)
