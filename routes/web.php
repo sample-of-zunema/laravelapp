@@ -41,7 +41,8 @@ Route::get('/', function () {
 // Route::get('/hello/{id?}', 'App\Http\Controllers\HelloController@index');
 
 // 3-10.クエリー文字列の利用
-//4-3.ミドルウェアの実行
-Route::get('/hello', 'App\Http\Controllers\HelloController@index')
+//4-13.グローバルミドルウェア
+Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+    ->middleware('helo')
 // 3-16.POSTのルート設定
 Route::post('/hello', 'App\Http\Controllers\HelloController@post');
