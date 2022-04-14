@@ -40,9 +40,7 @@ Route::get('/', function () {
 // 3-9.ルートパラメータをテンプレートに渡す
 // Route::get('/hello/{id?}', 'App\Http\Controllers\HelloController@index');
 
-// 3-10.クエリー文字列の利用
-//4-13.グローバルミドルウェア
+//4-16.バリデーション
 Route::get('/hello', 'App\Http\Controllers\HelloController@index');
-    ->middleware('helo')
-// 3-16.POSTのルート設定
+// 4-16.バリデーション
 Route::post('/hello', 'App\Http\Controllers\HelloController@post');
