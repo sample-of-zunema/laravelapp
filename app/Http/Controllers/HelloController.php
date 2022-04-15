@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 use App\Http\Requests\HelloRequest;  // 4-22.バリデーションのフォームリクエスト
+use Validator;  //4-24.バリbariデータの作成
 
 class HelloController extends Controller
 {
@@ -14,8 +15,19 @@ class HelloController extends Controller
         return view('hello.index', ['msg' => 'フォームを入力：']);
     }
 
+    // 4-24.バリデータを使ってみる
     public function post(HelloRequest $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0,150',
+        ]);
+        if ($validator->fails()) {
+            return redirect('/hello')
+                    ->withErrors($validator)
+                    ->withInput();
+        }
         return view('hello.index', ['msg' => '正しく入力されました！']);
     }
 
