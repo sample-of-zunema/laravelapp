@@ -9,14 +9,23 @@ use Validator;  //4-24.バリbariデータの作成
 
 class HelloController extends Controller
 {
-    // 4-22.バリデーションを利用する（フォームリクエスト）
+    // 4-25.クエリー文字列にバリデータを適用する
     public function index(Request $request)
     {
-        return view('hello.index', ['msg' => 'フォームを入力：']);
+        $vakidator = Validator::make($request->query(), [
+            'id' => 'required',
+            'pass' => 'required',
+        ]);
+        if ($validator->fails()) {
+            $msg = 'クエリーに問題があります。';
+        } else {
+            $msg = 'ID/PASSを受け付けました。フォームを入力ください。'
+        }
+        return view('hello.index', ['msg' => $msg,]);
     }
 
     // 4-24.バリデータを使ってみる
-    public function post(HelloRequest $request)
+    public function post(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -30,6 +39,29 @@ class HelloController extends Controller
         }
         return view('hello.index', ['msg' => '正しく入力されました！']);
     }
+
+
+    // // 4-22.バリデーションを利用する（フォームリクエスト）
+    // public function index(Request $request)
+    // {
+    //     return view('hello.index', ['msg' => 'フォームを入力：']);
+    // }
+
+    // // 4-24.バリデータを使ってみる
+    // public function post(Request $request)
+    // {
+    //     $validator = Validator::make($request->all(), [
+    //         'name' => 'required',
+    //         'mail' => 'email',
+    //         'age' => 'numeric|between:0,150',
+    //     ]);
+    //     if ($validator->fails()) {
+    //         return redirect('/hello')
+    //                 ->withErrors($validator)
+    //                 ->withInput();
+    //     }
+    //     return view('hello.index', ['msg' => '正しく入力されました！']);
+    // }
 
     // // 4-15.バリデーションを利用する
     // public function index(Request $request)
