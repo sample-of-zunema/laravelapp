@@ -25,7 +25,7 @@ class Myrule implements Rule
      */
     public function passes($attribute, $value)
     {
-        return $value % $this->num = 0;
+        return $value % $this->num == 0;
     }
 
     /**
