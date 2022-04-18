@@ -57,3 +57,5 @@ Route::post('/hello/edit', 'App\Http\Controllers\HelloController@update');
 Route::get('/hello/del', 'App\Http\Controllers\HelloController@del');
 // 5-9.データベースの利用（デリート文）
 Route::post('/hello/del', 'App\Http\Controllers\HelloController@remove');
+// 5-9.データベースの利用（クエリビルダ）
+Route::get('/hello/show', 'App\Http\Controllers\HelloController@show');
