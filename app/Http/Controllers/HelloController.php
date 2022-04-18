@@ -39,6 +39,26 @@ class HelloController extends Controller
         return redirect('/hello');
     }
 
+    // 5-12.データベースの利用（アップデート文）
+    public function edit(Request $request)
+    {
+        $param = ['id' => $request->id];
+        $item = DB::select('select * form people where id = :id', $param);
+        return view('hello.edit', ['form' => $item[0]]);
+    }
+
+    public function update(Request $request)
+    {
+        $param = [
+            'id' => $request->id,
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'age' => $request->age,
+        ];
+        DB::update('update people set name = :name, mail = :mail, age = :age where id = :id', $param);
+        return redirect('/hello');
+    }
+
     // // 5-7.データベースの利用
     // public function index(Request $request)
     // {
