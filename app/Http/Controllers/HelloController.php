@@ -26,9 +26,11 @@ class HelloController extends Controller
          $validate_rule = [
              'msg' => 'required',
          ];
-         $this->vlidate($request, $validate_rule);
+         $this->validate($request, $validate_rule);
          $msg = $request->msg;
-         $response = response()->view('hello.index', ['msg' => '「' . $msg . '」をクッキーに保存しました。')];
+         $response = response()->view('hello.index', [
+             'msg' => '「' . $msg . '」をクッキーに保存しました。'
+            ]);
         $response->cookie('msg', $msg, 100);
          return $response;
      }

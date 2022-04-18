@@ -13,7 +13,6 @@
       <p>入力に問題があります。再入力してください。</p>
       {{ count($errors) }}
       @endif
-      
       <form action="/hello" method="post">
             <table>
                   @csrf
