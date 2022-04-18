@@ -49,3 +49,7 @@ Route::post('/hello', 'App\Http\Controllers\HelloController@post');
 Route::get('/hello/add', 'App\Http\Controllers\HelloController@add');
 // 5-9.データベースの利用（インサート文）
 Route::post('/hello/add', 'App\Http\Controllers\HelloController@create');
+// 5-9.データベースの利用（アップデート文）
+Route::get('/hello/edit', 'App\Http\Controllers\HelloController@edit');
+// 5-9.データベースの利用（アップデート文）
+Route::post('/hello/update', 'App\Http\Controllers\HelloController@update');
