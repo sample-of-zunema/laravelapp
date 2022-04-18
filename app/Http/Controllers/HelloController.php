@@ -6,34 +6,56 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 use App\Http\Requests\HelloRequest;  // 4-22.バリデーションのフォームリクエスト
 use Validator;  //4-24.バリbariデータの作成
+use Illuminate\Support\Facades\DB; // 5-4.データベースの利用
 
 class HelloController extends Controller
 {
-     // 4-38.クッキーを読み書きする
-     public function index(Request $request)
-     {
-        if ($request->hasCookie('msg'))
-        {
-            $msg = 'Cookie: ' . $request->cookie('msg');
-        } else {
-            $msg = '※クッキーはありません。';
-        }
-        return view('hello.index', ['msg' => $msg]);
-     }
+    // 5-4.データベースの利用
+    public function index(Request $request)
+    {
+        $items = DB::select('selevt * from people');
+        return view('hello.index', ['items' => $items]);
+    }
 
-     public function post(Request $request)
-     {
-         $validate_rule = [
-             'msg' => 'required',
-         ];
-         $this->validate($request, $validate_rule);
-         $msg = $request->msg;
-         $response = response()->view('hello.index', [
-             'msg' => '「' . $msg . '」をクッキーに保存しました。'
-            ]);
-        $response->cookie('msg', $msg, 100);
-         return $response;
-     }
+    public function post(Request $request)
+    {
+        $validate_rule = [
+            'msg' => 'required',
+        ];
+        $this->validate($request, $validate_rule);
+        $msg = $request->msg;
+        $response = response()->view('hello.index', [
+            'msg' => '「' . $msg . '」をクッキーに保存しました。'
+           ]);
+       $response->cookie('msg', $msg, 100);
+        return $response;
+    }
+
+    //  // 4-38.クッキーを読み書きする
+    //  public function index(Request $request)
+    //  {
+    //     if ($request->hasCookie('msg'))
+    //     {
+    //         $msg = 'Cookie: ' . $request->cookie('msg');
+    //     } else {
+    //         $msg = '※クッキーはありません。';
+    //     }
+    //     return view('hello.index', ['msg' => $msg]);
+    //  }
+
+    //  public function post(Request $request)
+    //  {
+    //      $validate_rule = [
+    //          'msg' => 'required',
+    //      ];
+    //      $this->validate($request, $validate_rule);
+    //      $msg = $request->msg;
+    //      $response = response()->view('hello.index', [
+    //          'msg' => '「' . $msg . '」をクッキーに保存しました。'
+    //         ]);
+    //     $response->cookie('msg', $msg, 100);
+    //      return $response;
+    //  }
 
     // // 4-31.HelloValidatorのルールを使用する
     // public function index(Request $request)
