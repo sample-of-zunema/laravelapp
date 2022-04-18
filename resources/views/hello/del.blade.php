@@ -22,4 +22,4 @@
 
 @section('footer')
   copyright 2022 iio.
-@endsecti
+@endsection

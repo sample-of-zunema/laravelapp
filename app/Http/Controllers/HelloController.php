@@ -13,7 +13,7 @@ class HelloController extends Controller
     // 5-9.データベースの利用（インサート文）
     public function index(Request $request)
     {
-        $items = DB::select('select * from people');
+        $items = DB::table('people')->get();
         return view('hello.index', ['items' => $items]);
     }
 
