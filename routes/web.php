@@ -44,3 +44,8 @@ Route::get('/', function () {
 Route::get('/hello', 'App\Http\Controllers\HelloController@index');
 // 4-16.バリデーション
 Route::post('/hello', 'App\Http\Controllers\HelloController@post');
+
+// 5-9.データベースの利用（インサート文）
+Route::get('/hello/add', 'App\Http\Controllers\HelloController@add');
+// 5-9.データベースの利用（インサート文）
+Route::post('/hello/add', 'App\Http\Controllers\HelloController@create');
