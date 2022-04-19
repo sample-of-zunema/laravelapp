@@ -33,11 +33,13 @@ class HelloController extends Controller
         return $response;
     }
 
+    // 5-27.insertによるレコード追加
     public function add(Request $request)
     {
         return view('hello.add');
     }
 
+    // 5-27.insertによるレコード追加
     public function create(Request $request)
     {
         $param = [
@@ -49,40 +51,41 @@ class HelloController extends Controller
         return redirect('/hello');
     }
 
-    // 5-12.データベースの利用（アップデート文）
+    // 5-28.updateによるレコード更新
     public function edit(Request $request)
     {
-        $param = ['id' => $request->id];
-        $item = DB::select('select * from people where id = :id', $param);
-        return view('hello.edit', ['form' => $item[0]]);
+        $item = DB::table('people')
+            ->where('id', $request->id)->first();
+        return view('hello.edit', ['form' => $item]);
     }
 
+    // 5-28.updateによるレコード更新
     public function update(Request $request)
     {
         $param = [
-            'id' => $request->id,
             'name' => $request->name,
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::update('update people set name = :name, mail = :mail, age = :age where id = :id', $param);
+        DB::table('people')
+            ->where('id', $request->id)
+            ->update($param);
         return redirect('/hello');
     }
 
-    // 5-15.データベースの利用（デリート文）
+    // 5-29.deleteによるレコード更新
     public function del(Request $request)
     {
-        $param = ['id' => $request->id];
-        $item = DB::select('select * from people where id = :id', $param);
-        return view('hello.del', ['form' => $item[0]]);
+        $item = DB::table('people')
+            ->where('id', $request->id)->first();
+        return view('hello.del', ['form' => $item]);
     }
 
+    // 5-28.deleteによるレコード更新
     public function remove(Request $request)
     {
-        $param = [
-            'id' => $request->id,
-        ];
-        DB::delete('delete from people where id = :id', $param);
+        DB::table('people')
+            ->where('id', $request->id)->delete();
         return redirect('/hello');
     }
 
