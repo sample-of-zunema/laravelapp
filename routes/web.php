@@ -66,4 +66,4 @@ Route::get('/person', 'App\Http\Controllers\PersonController@index');
 // 6-9.IDによる検索
 Route::get('/person/find', 'App\Http\Controllers\PersonController@find');
 // 6-9.IDによる検索
-Route::post('/person/find', 'App\Http\Controllers\PersonController@serch');
+Route::post('/person/find', 'App\Http\Controllers\PersonController@search');
