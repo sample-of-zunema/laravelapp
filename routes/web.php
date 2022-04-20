@@ -62,3 +62,8 @@ Route::get('/hello/show', 'App\Http\Controllers\HelloController@show');
 
 // 6-4.Eloquent ORM、ルート情報
 Route::get('/person', 'App\Http\Controllers\PersonController@index');
+
+// 6-9.IDによる検索
+Route::get('/person/find', 'App\Http\Controllers\PersonController@find');
+// 6-9.IDによる検索
+Route::post('/person/find', 'App\Http\Controllers\PersonController@serch');
