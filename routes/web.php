@@ -67,3 +67,7 @@ Route::get('/person', 'App\Http\Controllers\PersonController@index');
 Route::get('/person/find', 'App\Http\Controllers\PersonController@find');
 // 6-9.IDによる検索
 Route::post('/person/find', 'App\Http\Controllers\PersonController@search');
+// 6-21.addおよびcreateアクションを追記する
+Route::get('/person/add', 'App\Http\Controllers\PersonController@add');
+// 6-9.addおよびcreateアクションを追記する
+Route::post('/person/add', 'App\Http\Controllers\PersonController@create');
