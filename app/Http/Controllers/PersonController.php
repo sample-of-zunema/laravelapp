@@ -61,7 +61,7 @@ class PersonController extends Controller
     public function delete(Request $request)
     {
         $person = Person::find($request->id);
-        return view('person.del', ['form' = $person]);
+        return view('person.del', ['form' => $person]);
     }
 
     public function remove(Request $request)
