@@ -75,3 +75,7 @@ Route::post('/person/add', 'App\Http\Controllers\PersonController@create');
 Route::get('/person/edit', 'App\Http\Controllers\PersonController@edit');
 // 6-24.updateアクション
 Route::post('/person/edit', 'App\Http\Controllers\PersonController@update');
+// 6-27.delアクション
+Route::get('/person/del', 'App\Http\Controllers\PersonController@delete');
+// 6-27.removeアクション
+Route::post('/person/del', 'App\Http\Controllers\PersonController@remove');
