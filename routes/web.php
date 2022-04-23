@@ -71,3 +71,7 @@ Route::post('/person/find', 'App\Http\Controllers\PersonController@search');
 Route::get('/person/add', 'App\Http\Controllers\PersonController@add');
 // 6-9.addおよびcreateアクションを追記する
 Route::post('/person/add', 'App\Http\Controllers\PersonController@create');
+// 6-24.editアクション
+Route::get('/person/edit', 'App\Http\Controllers\PersonController@edit');
+// 6-24.updateアクション
+Route::post('/person/edit', 'App\Http\Controllers\PersonController@update');
