@@ -19,7 +19,6 @@
               <tr><td>{{ $obj->getData() }}</td></tr>
             @endforeach
           </table>
-          @endif
         </td>
       </tr>
       @endforeach
