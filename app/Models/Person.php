@@ -13,6 +13,11 @@ class Person extends Model
 
     protected $guarded = array('id');
 
+    public function boards()
+    {
+        return $this->hasMany('App\Models\Board');
+    }
+
     public static $rules = array(
         'name' => 'required',
         'mail' => 'email',

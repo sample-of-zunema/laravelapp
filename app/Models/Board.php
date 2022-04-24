@@ -11,6 +11,11 @@ class Board extends Model
 
     protected $guarded = array('id');
 
+    public function person()
+    {
+        return $this->belongsTo('App\Models\Person');
+    }
+
     public static $rules = array(
         'person_id' => 'required',
         'title' => 'required',
@@ -19,6 +24,6 @@ class Board extends Model
 
     public function getData()
     {
-        return $this->id . ': ' . $this->title;
+        return $this->id . ': ' . $this->title . ' (' . $this->person->name . ')';
     }
 }

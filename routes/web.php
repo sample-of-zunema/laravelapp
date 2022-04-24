@@ -79,3 +79,9 @@ Route::post('/person/edit', 'App\Http\Controllers\PersonController@update');
 Route::get('/person/del', 'App\Http\Controllers\PersonController@delete');
 // 6-27.removeアクション
 Route::post('/person/del', 'App\Http\Controllers\PersonController@remove');
+// 6-34.Boardモデル
+Route::get('board', 'App\Http\Controllers\BoardController@index');
+// 6-34.Board.addアクション
+Route::get('board/add', 'App\Http\Controllers\BoardController@add');
+// 6-34.Boardモデルアクション
+Route::post('board/add', 'App\Http\Controllers\BoardController@create');
