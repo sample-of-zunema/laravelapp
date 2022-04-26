@@ -91,3 +91,7 @@ Route::resource('rest', 'App\Http\Controllers\RestappController');
 
 // 7-12.hello/restのルート情報
 Route::get('/hello/rest', 'App\Http\Controllers\HelloController@rest');
+
+// 7-14.セッションの利用
+Route::get('/hello/session', 'App\Http\Controllers\HelloController@ses_get');
+Route::post('/hello/session', 'App\Http\Controllers\HelloController@ses_put');

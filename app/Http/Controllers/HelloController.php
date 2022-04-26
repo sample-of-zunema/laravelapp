@@ -96,7 +96,7 @@ class HelloController extends Controller
     }
 
     // 7-14.セッション利用
-    public function ses_get(Reqest $request)
+    public function ses_get(Request $request)
     {
         $sesdata = $request->session()->get('msg');
         return view('hello.session', ['session_data' => $sesdata]);
