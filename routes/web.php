@@ -88,3 +88,6 @@ Route::post('board/add', 'App\Http\Controllers\BoardController@create');
 
 // 7-6.RESTfulのルート情報
 Route::resource('rest', 'App\Http\Controllers\RestappController');
+
+// 7-12.hello/restのルート情報
+Route::get('/hello/rest', 'App\Http\Controllers\HelloController@rest');

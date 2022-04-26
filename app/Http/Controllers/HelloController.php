@@ -89,6 +89,12 @@ class HelloController extends Controller
         return redirect('/hello');
     }
 
+    // 7-11.フォームを/hello/restに埋め込む
+    public function rest(Request $request)
+    {
+        return view('hello.rest');
+    }
+
     // // 5-7.データベースの利用
     // public function index(Request $request)
     // {
