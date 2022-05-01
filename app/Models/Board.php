@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Board extends Model
 {
     // use HasFactory;
+
     protected $guarded = array('id');
 
     public function person()
