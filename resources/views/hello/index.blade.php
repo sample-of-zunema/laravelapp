@@ -26,5 +26,5 @@
 @endsection
 
 @section('footer')
-      copyright 2022 iio.
+copyright 2022 iio.
 @endsection
