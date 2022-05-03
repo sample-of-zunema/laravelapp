@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
+use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;  // 4-22.バリデーションのフォームリクエスト
 use Validator;
 use Illuminate\Support\Facades\DB;
