@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;  // 2-15.RequestおよびResponse
 use App\Http\Requests\HelloRequest;  // 4-22.バリデーションのフォームリクエスト
 use Validator;  //4-24.バリbariデータの作成
-use Illuminate\Support\Facades\DB; // 5-4.データベースの利用
+use Illuminate\Support\Facades\DB;
 use App\Models\Person;
 
 class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        $items = DB::table('people')->simplePaginate(5);
+        $items = DB::table('people')->simplePaginate();
         return view('hello.index', ['items' => $items]);
     }
 
