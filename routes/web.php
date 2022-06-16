@@ -95,3 +95,6 @@ Route::get('/hello/rest', 'App\Http\Controllers\HelloController@rest');
 // 7-14.セッションの利用
 Route::get('/hello/session', 'App\Http\Controllers\HelloController@ses_get');
 Route::post('/hello/session', 'App\Http\Controllers\HelloController@ses_put');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
