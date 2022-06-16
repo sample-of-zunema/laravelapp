@@ -15,7 +15,7 @@ class HelloController extends Controller
     {
         $sort = $request->sort;
         $items = DB::table('people')->orderBy($sort, 'asc')
-            ->simplePaginate(5);
+            ->paginate(5);
         // $items = Person::orderBy($sort, 'asc')
         //         ->paginate(5);
         $param = ['items' => $items, 'sort' => $sort];
