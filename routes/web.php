@@ -41,7 +41,8 @@ Route::get('/', function () {
 // Route::get('/hello/{id?}', 'App\Http\Controllers\HelloController@index');
 
 //4-16.バリデーション
-Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+Route::get('/hello', 'App\Http\Controllers\HelloController@index')
+    ->middleware('auth');
 // 4-16.バリデーション
 Route::post('/hello', 'App\Http\Controllers\HelloController@post');
 
