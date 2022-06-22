@@ -8,7 +8,7 @@ use App\Http\Requests\HelloRequest;  // 4-22.バリデーションのフォー�
 use Validator;  //4-24.バリbariデータの作成
 use Illuminate\Support\Facades\DB; // 5-4.データベースの利用
 use App\Models\Person;
-use illuminate\Support\Facades\Auth; // 7
+use illuminate\Support\Facades\Auth;
 
 class HelloController extends Controller
 {
@@ -19,7 +19,7 @@ class HelloController extends Controller
         // $items = DB::table('people')->orderBy($sort, 'asc')
         //     ->paginate(5);
         $items = Person::orderBy($sort, 'asc')
-                ->simplePaginate(5);
+            ->simplePaginate(5);
         $param = ['items' => $items, 'sort' => $sort, 'user' => $user];
         return view('hello.index', $param);
     }
