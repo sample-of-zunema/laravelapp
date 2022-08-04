@@ -8,7 +8,7 @@ use App\Http\Requests\HelloRequest;  // 4-22.バリデーションのフォー�
 use Validator;  //4-24.バリbariデータの作成
 use Illuminate\Support\Facades\DB; // 5-4.データベースの利用
 use App\Models\Person;
-use illuminate\Support\Facades\Auth; // 7z
+use illuminate\Support\Facades\Auth; // 7
 
 class HelloController extends Controller
 {
